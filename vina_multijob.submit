@@ -1,0 +1,16 @@
+executable = vina_multi.sh
+
+transfer_input_files    = $(inputdir)/, vina
+transfer_output_files   = results
+should_transfer_files   = Yes
+when_to_transfer_output = ON_EXIT
+
+output        = logs/job.$(Cluster).$(Process).out
+error         = logs/job.$(Cluster).$(Process).error
+log           = logs/job.$(Cluster).$(Process).log
+
+request_cpus   = 1
+request_memory = 1GB
+request_disk   = 512MB
+
+queue inputdir matching run*
